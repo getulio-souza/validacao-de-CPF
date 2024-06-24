@@ -10,16 +10,16 @@ const validarCPF = (cpf) => {
     }
 
     //verificando se o CPF é composto apenas por numeros iguais
-    if(cpf.length === "00000000000" ||
-        cpf.length === "11111111111" || 
-        cpf.length === "22222222222" || 
-        cpf.length === "33333333333" || 
-        cpf.length === "44444444444" || 
-        cpf.length === "55555555555" ||
-        cpf.length === "66666666666" || 
-        cpf.length === "77777777777" || 
-        cpf.length === "88888888888" || 
-        cpf.length === "99999999999"){
+    if(cpf === "00000000000" ||
+        cpf === "11111111111" || 
+        cpf === "22222222222" || 
+        cpf === "33333333333" || 
+        cpf === "44444444444" || 
+        cpf === "55555555555" ||
+        cpf === "66666666666" || 
+        cpf === "77777777777" || 
+        cpf === "88888888888" || 
+        cpf === "99999999999"){
         console.error("CPF invalido. Documento nao pode ter caracteres iguais.")
         return
     }
