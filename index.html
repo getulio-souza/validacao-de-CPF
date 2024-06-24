@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Validacao de CPF</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js"></script>
+</head>
+<body>
+    <section class="box-cpf">
+        <label for="cpf">CPF</label>
+        <input type="text" id="cpf">
+        <button onclick="consultarCPF()">Consultar</button>
+        <div id="resultado"></div>
+    </section>
+    <script src="validacao.js"></script>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", ()=> {
+            new Cleave('#cpf', {
+                delimiters: ['.', '.', '-' ],
+                blocks: [3,3,3,2],
+                numericOnly: true
+            })
+        })
+        // Ensure the function is defined in the global scope
+        function consultarCPF() {
+            const cpf = document.getElementById("cpf").value;
+            const resultado = validarCPF(cpf);
+            document.getElementById("resultado").innerText = resultado ? "CPF válido!" : "CPF inválido!";
+        }
+    </script>
+
+</body>
+</html>
